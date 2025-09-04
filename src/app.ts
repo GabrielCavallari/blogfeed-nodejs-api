@@ -1,13 +1,15 @@
 import express from 'express';
 import postRoutes from './routes/postRoutes';
+import connectDB from './db'; // Importamos nossa função de conexão
+
+// Conectar ao MongoDB
+connectDB();
 
 const app = express();
 const port = 3000;
 
-// Middleware para permitir que o Express entenda JSON
 app.use(express.json());
 
-// Usar as rotas de postagens
 app.use('/api', postRoutes);
 
 app.listen(port, () => {

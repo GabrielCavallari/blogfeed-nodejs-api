@@ -1,12 +1,12 @@
 # BlogFeed API
 
-Uma API RESTful simples para gerenciamento de posts de blog, construída com Node.js, Express e TypeScript. Este projeto foi desenvolvido como parte do "Guia de Estudos Completo para Engenharia de Backend".
+Uma API RESTful simples para gerenciamento de posts de blog, construída com Node.js, Express e TypeScript. Este projeto foi desenvolvido como parte do "Guia de Estudos Completo para Engenharia de Backend" e utiliza o MongoDB para persistência de dados.
 
 O uso de TypeScript garante um código mais seguro, manutenível e com menos bugs em tempo de execução.
 
 ## ✨ Funcionalidades
 
-A API oferece as seguintes funcionalidades básicas:
+A API oferece as seguintes funcionalidades básicas, com os dados sendo salvos permanentemente em um banco de dados NoSQL:
 
 * **Listar** todas as postagens de blog.
 * **Buscar** uma postagem específica pelo seu ID.
@@ -17,7 +17,9 @@ A API oferece as seguintes funcionalidades básicas:
 * **Node.js**: Ambiente de execução para o JavaScript no servidor.
 * **Express**: Framework para a construção da API.
 * **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
-* **ts-node**: Para executar o código TypeScript diretamente.
+* **MongoDB**: Banco de dados NoSQL orientado a documentos.
+* **Mongoose**: Biblioteca de ODM (Object Data Modeling) para modelar e interagir com o MongoDB.
+* **Dotenv**: Para gerenciar variáveis de ambiente de forma segura.
 
 ## 🚀 Como Executar Localmente
 
@@ -34,12 +36,19 @@ Siga os passos abaixo para rodar o projeto na sua máquina.
     npm install
     ```
 
-3.  **Execute o servidor de desenvolvimento:**
+3.  **Configure as Variáveis de Ambiente:**
+    * Crie um arquivo chamado `.env` na raiz do projeto.
+    * Dentro dele, adicione sua string de conexão do MongoDB Atlas:
+      ```
+      MONGO_URI=sua_string_de_conexao_aqui
+      ```
+
+4.  **Execute o servidor de desenvolvimento:**
     ```bash
     npm start
     ```
 
-O servidor estará rodando em `http://localhost:3000`.
+O servidor se conectará ao MongoDB Atlas e estará rodando em `http://localhost:3000`.
 
 ## 🧪 Como Testar a API
 
